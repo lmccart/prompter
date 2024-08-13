@@ -33,7 +33,7 @@ const lines = [
   "providing shelter or other resources.",
   "The host is usually larger, stronger, or more dominant than its guest.",
   "We’ve learned well these past years what it is to be sick, to have something else living inside of you, inside your body.",
-  "I’m also thinking about the election this november, and the impact that will have on our individual decisions about what to host in our bodies.",
+  "I’m also thinking about the election this november, and the impact that may have on our individual decisions about what to host in our bodies.",
   "The host is usually larger, stronger, or more dominant than its guest.",
   "Imagine having a parasite, an entity inside your body, and not being able to make the decision to remove it.",
   "What are we all hosting? What are we holding?",
