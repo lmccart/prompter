@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://use.typekit.net/fhd0hue.css" />
+    <script src="lines.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+       * {
+        touch-action: manipulation;
+      }
+      body, button {
+        font-family: 'futura-pt', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        overflow: hidden;
+      }
+      .mode {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      #start_mode {}
+      #speak_mode {
+        display: none;
+      }
+
+      .roundButton {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background-color: transparent;
+        border: 1.5px solid #f6bfb7;
+        color: #f6bfb7;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        font-size: 40px;
+
+        &:hover {
+          border-color: #f6bfb7;
+          border: 2px solid #f6bfb7;
+        }
+        &:focus {
+          color: white;
+        }
+
+      }
+
+      .startButton {
+        background-color: #f6bfb7;
+        color: black;
+      }
+
+      .bottomButton {
+        position: absolute;
+        bottom: 100px;
+        left: 0;
+        color: #f6bfb7;
+        background: none;
+        outline: none;
+        border: none;
+        font-size: 30px;
+
+        &:hover {
+          border: none;
+          color: white;
+        }
+      }
+
+      #line {
+        color: #f6bfb7;
+        font-size: 40px;
+        position: absolute;
+        top: 50px;
+        width: 100%;
+        text-align: center;
+      }
+
+    </style>
+  </head>
+  <body>
+    <section id="start_mode" class="mode">
+      <button id="start" class="roundButton startButton">Start</button>
+    </section>
+    <section id="speak_mode" class="mode">
+      <div id="line"></div>
+      <button id="next" class="roundButton">Next</button>
+      <button id="back" class="bottomButton">Back</button>
+    </section>
+
+    <script>
+      let line = 0;
+      $('#start').click(start);
+      $('#next').click(next);
+      $('#back').click(back);
+
+      function start() {
+        $('#start-mode').hide();
+        $('#speak_mode').css('display', 'flex');
+        const utterance = new SpeechSynthesisUtterance("hello");
+        speechSynthesis.speak(utterance);
+      }
+
+      function next() {
+        if (line >= 0 && line < lines.length) {
+          let l = lines[line];
+          $('#line').text(l);
+          const utterance = new SpeechSynthesisUtterance(l);
+          speechSynthesis.speak(utterance);
+          line++;
+        } else console.log(`line ${line} out of bounds`);
+      }
+
+      function back() {
+        if (line > 0) {
+          line--;
+          let l = lines[line];
+          $('#line').text(l);
+        }
+      }
+
+      document.addEventListener('touchmove', function (event) {
+        if (event.scale !== 1) { event.preventDefault(); }
+      }, { passive: false });
+
+      var lastTouchEnd = 0;
+      document.addEventListener('touchend', function (event) {
+        var now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) {
+          event.preventDefault();
+        }
+        lastTouchEnd = now;
+      }, false);
+
+    </script>
+  </body>
+</html>
