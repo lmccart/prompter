@@ -55,7 +55,7 @@ const lines = [
   "This is the reset. It’s one last pause. ",
   "I’m thinking about how I learned to be a good host.",
   "When I was 23 my mom gave me her copy of The Entertaining Survival Guide: A Handbook for the Hesitant Host.",
-  "In it I learned that when a august offers helps at your party, you should respond: SLIDE",
+  "In it I learned that when a host offers helps at your party, you should respond: SLIDE",
   "How kind of you, but I think I have everything under control.",
   "A good host is one that is in control—of her home, of her guests, of the conversation, of herself.",
   "How do we know when we’re in control?",
@@ -65,7 +65,7 @@ const lines = [
   "This is the last program so you may need to convince others if you want an ear piece.",
   "Parag will perform once more while we reset for the next program.",
   
-  "PROGRAM 3",
+  "PROGRAM 3",  
   
   "[PLEASE GIVE YOUR EARPIECE TO SOMEONE ELSE THAT COULD USE IT]",
   "This is the end of program 3. We will move to Stern Hall to complete the evening.",
@@ -74,7 +74,7 @@ const lines = [
   "A host on the network serves resources and data to users that connect to it.",
   "A reliable host is easy to connect to, has little downtime, and keeps the network flowing.",
   "In a way, maybe we all have become this version of host, offering ourselves as the always on, connected providers of the internet moving through us.",
-  "As AI comes for our jobs, I wonder then if a last remaining role for us humans may be as emotional interface. ",
+  "As AI comes for our jobs, I wonder if a last remaining role for us humans may be as emotional interface. ",
   "As the technology flows through us, what we can hold is our sense of presence, our awareness of the people right in front of us.",
   "Thank you performers, parag, sean. [PERFORMERS SPEAK]",
   "Thank you. Stalgia. David. Gabriel Noguez and Tony Noguez and [Photog] for documenting tonight. Wylie and Daniel.",
